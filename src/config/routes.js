@@ -1,5 +1,6 @@
 import React from 'react'
 import Login from '../screens/login'
+import Dashboard from '../screens/dashboard'
 
 import {
   Route,
@@ -14,6 +15,7 @@ const Routes = () => {
       <Switch>
         <Route exact path='/' component={Login}></Route>
         <Route path='/login' component={Login}></Route>
+        <Route path='/dashboard' component={Dashboard}></Route>
         <Redirect to='/' />
       </Switch>
     </Router>
