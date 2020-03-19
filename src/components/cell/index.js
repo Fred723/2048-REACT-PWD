@@ -23,14 +23,15 @@ const cellColorMap = {
 }
 
 const getCellBgColor = (number) => {
-  return cellColorMap[number];
+  return number ? cellColorMap[number] : '#bababa';
 }
 
 const CellContainer = styled.div`
-  margin: 3px;
+  margin: 4px 2px;
   padding: 0;
   height: 40px;
-  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
