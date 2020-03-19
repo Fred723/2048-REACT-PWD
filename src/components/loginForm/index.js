@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Logo from '../logo/index'
-//import Wrapper from '../wrapper'
-
-
 
 function LoginForm({ image, title, onConfirm }) {
   const [username, setUsername] = useState('')
@@ -62,21 +59,7 @@ const LoginFormContainer = styled.div`
   justify-content: center;
   background-color: #EFF0F1;
 `
-/*
-const StyledImage = styled.img`
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  filter: brightness(50%);
-  z-index: -1;
-`
-*/
+
 const StyledInput = styled.input`
   color: white;
   font-size: 15px;

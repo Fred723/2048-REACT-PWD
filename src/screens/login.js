@@ -1,7 +1,6 @@
 import React from 'react'
 import axios from 'axios'
 import LoginForm from '../components/loginForm/index'
-//import Wrapper from '../components/wrapper'
 
 function Login({ history }) {
   const BAD_LOGIN_MSG = 'False username or password'
