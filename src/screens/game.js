@@ -10,7 +10,7 @@ const board = [
   [32, null, 256, 32, 2, 4]
 ]
 
-const dashboard = () => {
+const Game = () => {
   return (
     <div>
       <CellsBoard board={board} />
@@ -18,4 +18,4 @@ const dashboard = () => {
   );
 };
 
-export default dashboard;
+export default Game;
