@@ -1,6 +1,6 @@
 import React from 'react'
 import Login from '../screens/login'
-import Dashboard from '../screens/dashboard'
+import Game from '../screens/game'
 
 import {
   Route,
@@ -15,7 +15,7 @@ const Routes = () => {
       <Switch>
         <Route exact path='/' component={Login}></Route>
         <Route path='/login' component={Login}></Route>
-        <Route path='/dashboard' component={Dashboard}></Route>
+        <Route path='/Game' component={Game}></Route>
         <Redirect to='/' />
       </Switch>
     </Router>
