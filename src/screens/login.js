@@ -20,7 +20,7 @@ function Login({ history }) {
           localStorage.setItem('MarvelSession', {
             token: res.headers['x-access-token']
           })
-          history.push('/questions')
+          history.push('/dashboard')
         }
       })
       .catch(() => alert(BAD_LOGIN_MSG))
