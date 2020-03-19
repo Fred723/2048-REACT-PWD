@@ -16,14 +16,14 @@ function CellsBoard({ board }) {
 
 const CellsBoardContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: lightgray;
   color: white;
   border-radius: 4px;
   width: max-content;
-  padding: 0 2px;
+  padding: 2px;
 `
 
 export default CellsBoard
