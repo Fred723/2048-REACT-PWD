@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CellsBoard from '../components/cellsBoard/index'
 
 const board = [
@@ -11,9 +11,14 @@ const board = [
 ]
 
 const Game = () => {
+  const [gameBoard, setBoard] = useState(board)
+  const refreshBoard = (board) => {
+    setBoard(board)
+  }
+
   return (
     <div>
-      <CellsBoard board={board} />
+      <CellsBoard board={gameBoard} refreshBoard={refreshBoard} />
     </div>
   );
 };
