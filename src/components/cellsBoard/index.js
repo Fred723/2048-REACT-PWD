@@ -40,7 +40,9 @@ function CellsBoard({ board, refreshBoard }) {
       refreshBoard(board)
     },
     onSwipedRight: (eventData) => {
-      debugger
+      board.map((row) => swipeRowToLeft(row.reverse()))
+      board.map((row) => row.reverse())
+      refreshBoard(board)
     },
     onSwipedUp: (eventData) => {
       debugger
