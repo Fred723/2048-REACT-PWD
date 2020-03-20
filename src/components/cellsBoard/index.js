@@ -83,9 +83,10 @@ const CellsBoardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: lightgray;
+  background-color: ${props => (props.theme.secondary)};
   color: white;
   border-radius: 4px;
+  border: 1px solid white;
   width: max-content;
   padding: 2px;
 `
