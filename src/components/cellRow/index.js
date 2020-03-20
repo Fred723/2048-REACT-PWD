@@ -15,6 +15,7 @@ function CellRow({ row }) {
 }
 
 const CellRowContainer = styled.div`
+ display: flex;
 `
 
 export default CellRow

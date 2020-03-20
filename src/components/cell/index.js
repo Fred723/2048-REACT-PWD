@@ -27,7 +27,7 @@ const getCellBgColor = (number) => {
 }
 
 const CellContainer = styled.div`
-  margin: 4px 2px;
+  margin: 2px 2px;
   padding: 0;
   height: 40px;
   min-width: 40px;
