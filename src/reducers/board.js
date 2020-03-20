@@ -16,7 +16,7 @@ export default (state = initialState, action) => {
     case REFRESH_BOARD:
       return {
         ...state,
-        board: state.board
+        board: action.value || state.board
       }
 
     default:
