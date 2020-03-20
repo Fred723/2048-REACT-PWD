@@ -3,3 +3,9 @@ export const themeLight = {
   secondary: 'lightgray',
   fullBG: 'white'
 }
+
+export const themeDark = {
+  primary: 'black',
+  secondary: 'black',
+  fullBG: 'black'
+}
