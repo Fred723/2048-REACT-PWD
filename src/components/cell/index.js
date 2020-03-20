@@ -23,6 +23,10 @@ const cellColorMap = {
 }
 
 const getCellBgColor = (number) => {
+  if (number > 512) {
+    return 'black'
+  }
+
   return number ? cellColorMap[number] : '#bababa';
 }
 

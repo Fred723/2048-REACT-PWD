@@ -18,6 +18,11 @@ const isCellNotFilled = (cell) => !isCellFilled(cell)
 
 const moveFilledCellsToLeft = (row) => {
   for (let index = 0; index < row.length - 1; index++) {
+    if (isCellFilled(row[index]) && isCellFilled(row[index + 1]) && row[index] === row[index + 1]) {
+      row[index] = row[index] * 2
+      row[index + 1] = null // clear next cell
+    }
+
     if (isCellNotFilled(row[index])) {
       row[index] = row[index + 1]
       row[index + 1] = null // clear next cell
