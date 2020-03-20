@@ -4,9 +4,9 @@ Utilisation Obligatoire de REDUX (Gestion de State | Call API) {Redux-thunk}
  - Utilisation redux [DONE]
  - Redux thunk [TODO]
 
-Thème global [TODO]
+Thème global [DONE]
 
-Création d'un theme dark [TODO]
+Création d'un theme dark [DONE]
 
 Site Multilingues (i18n) [TODO]
 
