@@ -89,6 +89,7 @@ const CellsBoardContainer = styled.div`
   border: 1px solid white;
   width: max-content;
   padding: 2px;
+  margin: 50px auto 0;
 `
 
 export default CellsBoard
