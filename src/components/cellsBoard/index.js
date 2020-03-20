@@ -11,6 +11,8 @@ const config = {
   rotationAngle: 0,                      // set a rotation angle
 }
 
+const transpose = a => a[0].map((_, c) => a.map(r => r[c]))
+
 const isCellFilled = (cell) => cell !== null
 const isCellNotFilled = (cell) => !isCellFilled(cell)
 
@@ -45,10 +47,17 @@ function CellsBoard({ board, refreshBoard }) {
       refreshBoard(board)
     },
     onSwipedUp: (eventData) => {
-      debugger
+      board = transpose(board)
+      board = board.map((row) => swipeRowToLeft(row))
+      board = transpose(board)
+      refreshBoard(board)
     },
     onSwipedDown: (eventData) => {
-      debugger
+      board = transpose(board)
+      board = board.map((row) => swipeRowToLeft(row.reverse()))
+      board = board.map((row) => row.reverse())
+      board = transpose(board)
+      refreshBoard(board)
     },
     ...config
   })
