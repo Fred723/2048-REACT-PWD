@@ -16,6 +16,8 @@ const transpose = a => a[0].map((_, c) => a.map(r => r[c]))
 const isCellFilled = (cell) => cell !== null
 const isCellNotFilled = (cell) => !isCellFilled(cell)
 
+let score = 0;
+
 const moveFilledCellsToLeft = (row) => {
   for (let index = 0; index < row.length - 1; index++) {
     if (isCellFilled(row[index]) && isCellFilled(row[index + 1]) && row[index] === row[index + 1]) {
@@ -24,11 +26,12 @@ const moveFilledCellsToLeft = (row) => {
     }
 
     if (isCellNotFilled(row[index])) {
-      row[index] = row[index + 1]
+      row[index] = row[index + 1];
+      score = score + row[index];
       row[index + 1] = null // clear next cell
     }
   }
-
+  console.log(score);
   return row;
 }
 
@@ -76,6 +79,16 @@ function CellsBoard({ board, refreshBoard }) {
       })}
     </CellsBoardContainer>
   )
+}
+
+const scoreCalc = (row) => {
+  for (let index = 0; index < row.length - 1; index++) {
+    if (isCellNotFilled(row[index])) {
+      score = score + row[index];
+    }
+  }
+
+  return score;
 }
 
 const CellsBoardContainer = styled.div`
