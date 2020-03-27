@@ -18,7 +18,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         board: action.value || state.board,
-        score: action.score || state.board
+        score: action.score || state.score
       }
 
     default:
