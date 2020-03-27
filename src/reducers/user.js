@@ -9,9 +9,13 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case LOGIN:
+      localStorage.setItem('MarvelSession', JSON.stringify({
+        token: action.token
+      }))
+
       return {
         ...state,
-        token: state.token
+        token: action.token
       }
 
     case LOGOUT:

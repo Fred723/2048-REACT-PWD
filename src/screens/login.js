@@ -22,9 +22,8 @@ const Login = (props) => {
         if (res.data && res.data.errors) {
           alert(BAD_LOGIN_MSG)
         } else {
-          localStorage.setItem('MarvelSession', JSON.stringify({
-            token: res.headers['x-access-token']
-          }))
+          let token = res.headers['x-access-token']
+          props.actions.user.login(token)
           history.push('/game')
         }
       })

@@ -1,10 +1,9 @@
 export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
 
-export const login = (username, password) => ({
+export const login = (token) => ({
   type: LOGIN,
-  username,
-  password
+  token
 })
 
 
