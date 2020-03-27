@@ -17,9 +17,9 @@ const Login = ({ history }) => {
         if (res.data && res.data.errors) {
           alert(BAD_LOGIN_MSG)
         } else {
-          localStorage.setItem('MarvelSession', {
+          localStorage.setItem('MarvelSession', JSON.stringify({
             token: res.headers['x-access-token']
-          })
+          }))
           history.push('/game')
         }
       })
