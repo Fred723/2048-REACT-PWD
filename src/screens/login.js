@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import LoginForm from '../components/loginForm/index'
 
-function Login({ history }) {
+const Login = ({ history }) => {
   const BAD_LOGIN_MSG = 'False username or password'
 
   const login = (username, password) => {
