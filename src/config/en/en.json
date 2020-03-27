@@ -4,6 +4,7 @@
     "password": "Password",
     "login": "Log in",
     "reset": "Reset",
-    "SWITCH_THEME" : "SWITCH THEME"
+    "SWITCH_THEME" : "SWITCH THEME",
+    "LOG OUT": "LOG OUT"
     }
 }
