@@ -1,11 +1,16 @@
-import React from 'react';
+import React from 'react'
+import styled from 'styled-components'
 
-const Score = ({children} ) => {
+const ScoreBox = ({children} ) => {
     return (
-        <div>
+        <ScoreBoxContainer>
           {children} 
-        </div>
-    );
-};
+        </ScoreBoxContainer>
+    )
+}
 
-export default Score;
+const ScoreBoxContainer = styled.div`
+  padding: 5px;
+`
+
+export default ScoreBox
