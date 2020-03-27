@@ -11,7 +11,11 @@ const Game = (props) => {
   return (
     <GameContainer>
   	  <ThemeSwitch theme={props.themeState.theme} switchTheme={props.actions.theme.switchTheme} />
-      <CellsBoard board={props.boardState.board} refreshBoard={props.actions.board.refreshBoard} />
+      <CellsBoard
+        board={props.boardState.board}
+        score={props.boardState.score}
+        refreshBoard={props.actions.board.refreshBoard}
+      />
     </GameContainer>
   );
 };

@@ -1,6 +1,7 @@
 export const REFRESH_BOARD = 'REFRESH_BOARD'
 
-export const refreshBoard = (value) => ({
+export const refreshBoard = (value, score) => ({
   type: REFRESH_BOARD,
-  value
+  value,
+  score
 })
