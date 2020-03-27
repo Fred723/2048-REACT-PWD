@@ -1,4 +1,4 @@
-import { LOGIN } from '../actions/user'
+import { LOGIN, LOGOUT } from '../actions/user'
 
 const initialState = {
   token: localStorage.getItem('MarvelSession')
@@ -12,6 +12,14 @@ export default (state = initialState, action) => {
       return {
         ...state,
         token: state.token
+      }
+
+    case LOGOUT:
+      localStorage.removeItem('MarvelSession')
+
+      return {
+        ...state,
+        token: null
       }
 
     default:
