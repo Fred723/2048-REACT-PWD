@@ -50,7 +50,7 @@ function LoginForm({ image, title, onConfirm, loginErrorMessage, t }) {
       />
       <PrimaryStyledButton onClick={login}>{t('login')}</PrimaryStyledButton>
       <SecondaryStyledButton onClick={reset}>{t('reset')}</SecondaryStyledButton>
-      <LoginErrorMsgContainer>{loginErrorMessage}</LoginErrorMsgContainer>
+      <LoginErrorMsgContainer>{t(loginErrorMessage)}</LoginErrorMsgContainer>
     </LoginFormContainer>
    
   )

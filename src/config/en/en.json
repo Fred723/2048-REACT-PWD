@@ -5,6 +5,7 @@
     "login": "Log in",
     "reset": "Reset",
     "SWITCH_THEME" : "SWITCH THEME",
-    "LOG OUT": "LOG OUT"
+    "LOG OUT": "LOG OUT",
+    "False username or password": "False username or password"
     }
 }
