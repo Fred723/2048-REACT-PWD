@@ -4,7 +4,7 @@ import Logo from '../logo/index'
 import ChangeLanguageButton from '../languageChange/index'
 import { withTranslation } from 'react-i18next'
 
-function LoginForm({ image, title, onConfirm, t }) {
+function LoginForm({ image, title, onConfirm, loginErrorMessage, t }) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
@@ -50,6 +50,7 @@ function LoginForm({ image, title, onConfirm, t }) {
       />
       <PrimaryStyledButton onClick={login}>{t('login')}</PrimaryStyledButton>
       <SecondaryStyledButton onClick={reset}>{t('reset')}</SecondaryStyledButton>
+      <LoginErrorMsgContainer>{t(loginErrorMessage)}</LoginErrorMsgContainer>
     </LoginFormContainer>
    
   )
@@ -108,6 +109,10 @@ const StyledHeader = styled.h2`
   text-align: center;
 `
 
-
+const LoginErrorMsgContainer = styled.div`
+  margin-top: 20px;
+  color: red;
+  font-weight; bold;
+`
 
 export default withTranslation()(LoginForm)
