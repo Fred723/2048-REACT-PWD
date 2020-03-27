@@ -11,6 +11,7 @@ const ScoreBox = ({children} ) => {
 
 const ScoreBoxContainer = styled.div`
   padding: 5px;
+  color: ${props => (props.theme.font)}
 `
 
 export default ScoreBox
