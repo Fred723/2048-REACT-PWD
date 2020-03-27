@@ -1,21 +1,36 @@
-import { LOGIN, LOGOUT } from '../actions/user'
+import { LOGIN, LOGOUT, LOGIN_SUCCESS, LOGIN_FAILURE } from '../actions/user'
 
 const initialState = {
   token: localStorage.getItem('MarvelSession')
     ? JSON.parse(localStorage.getItem('MarvelSession')).token
-    : null
+    : null,
+  error: null
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case LOGIN:
+      return {
+        ...state,
+        token: state.token
+      }
+
+    case LOGIN_SUCCESS:
       localStorage.setItem('MarvelSession', JSON.stringify({
-        token: action.token
+        token: action.payload
       }))
 
       return {
         ...state,
-        token: action.token
+        token: action.payload,
+        error: null
+      }
+
+    case LOGIN_FAILURE:
+      return {
+        ...state,
+        token: state.token,
+        error: 'False username or password'
       }
 
     case LOGOUT:
@@ -23,7 +38,8 @@ export default (state = initialState, action) => {
 
       return {
         ...state,
-        token: null
+        token: null,
+        error: null
       }
 
     default:

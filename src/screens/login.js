@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 import LoginForm from '../components/loginForm/index'
 
 import { bindActionCreators } from 'redux'
@@ -7,7 +6,7 @@ import { connect } from 'react-redux'
 import allTheActions from '../actions'
 
 const Login = (props) => {
-  let { history, userState } = props;
+  let { history, userState, actions } = props;
   const BAD_LOGIN_MSG = 'False username or password'
 
   const login = (username, password) => {
@@ -15,19 +14,9 @@ const Login = (props) => {
       username,
       password
     }
-
-    axios
-      .post('https://easy-login-api.herokuapp.com/users/login', data)
-      .then(res => {
-        if (res.data && res.data.errors) {
-          alert(BAD_LOGIN_MSG)
-        } else {
-          let token = res.headers['x-access-token']
-          props.actions.user.login(token)
-          history.push('/game')
-        }
-      })
-      .catch(() => {
+    actions.user.login(data)
+      .then(() => history.push('/game'))
+      .catch((err) => {
         if (userState.token) {
           history.push('/game')
         } else {
@@ -38,7 +27,7 @@ const Login = (props) => {
 
   return (
     <div className='login'>
-      <LoginForm title='Welcome to 2048' onConfirm={login} />
+      <LoginForm title='Welcome to 2048' loginErrorMessage={userState.error} onConfirm={login} />
     </div>
   )
 }
