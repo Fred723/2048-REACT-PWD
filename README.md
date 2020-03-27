@@ -8,9 +8,7 @@ Thème global [DONE]
 
 Création d'un theme dark [DONE]
 
-Site Multilingues (i18n) [TODO]
-
-Disponible Offline [TODO]
+Site Multilingues (i18n) [DONE]
 
 Systeme de connexion (Routes Protégées) [TODO]
 
@@ -25,8 +23,6 @@ Bootstap et autres interdit [DONE]
 Mise en place des notifications PUSH [TODO]
 
 Mise en PROD [TODO]
-
-Create back api [TODO]
 
 ### `BONUS`
 
