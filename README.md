@@ -10,13 +10,13 @@ Création d'un theme dark [DONE]
 
 Site Multilingues (i18n) [DONE]
 
-Systeme de connexion (Routes Protégées) [TODO]
+Systeme de connexion (Routes Protégées) [DONE]
 
 styled-components obligatoire [DONE]
 
-PWA [TODO]
+PWA [DONE]
 
-Responsive [TODO]
+Responsive [DONE]
 
 Bootstap et autres interdit [DONE]
 
