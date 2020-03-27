@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Logo from '../logo/index'
+import ChangeLanguageButton from '../languageChange/index'
+import { withTranslation } from 'react-i18next'
 
-function LoginForm({ image, title, onConfirm }) {
+function LoginForm({ image, title, onConfirm, t }) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
@@ -27,25 +29,27 @@ function LoginForm({ image, title, onConfirm }) {
 
   return (
 
-           <LoginFormContainer>
-                    
+      <LoginFormContainer>
+        <ChangeLanguageButton>
+        </ChangeLanguageButton>
+
       <StyledHeader>
         <Logo size={50} src ={image}/>
       </StyledHeader>
       <StyledInput
-        placeholder='Username'
+        placeholder={t('Username')}
         type='text'
         value={username}
         onChange={onUsernameChange}
       />
       <StyledInput
-        placeholder='Password'
+        placeholder={t('Password')}
         type='password'
         value={password}
         onChange={onPasswordChange}
       />
-      <PrimaryStyledButton onClick={login}>Log in</PrimaryStyledButton>
-      <SecondaryStyledButton onClick={reset}>Reset</SecondaryStyledButton>
+      <PrimaryStyledButton onClick={login}>{t('login')}</PrimaryStyledButton>
+      <SecondaryStyledButton onClick={reset}>{t('reset')}</SecondaryStyledButton>
     </LoginFormContainer>
    
   )
@@ -103,4 +107,7 @@ const StyledHeader = styled.h2`
   color: #333;
   text-align: center;
 `
-export default LoginForm
+
+
+
+export default withTranslation()(LoginForm)

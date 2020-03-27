@@ -1,0 +1,9 @@
+{
+    "translation":{
+    "username": "Username",
+    "password": "Password",
+    "login": "Log in",
+    "reset": "Reset",
+    "SWITCH_THEME" : "SWITCH THEME"
+    }
+}

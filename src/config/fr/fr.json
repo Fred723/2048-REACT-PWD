@@ -1,0 +1,9 @@
+{
+    "translation":{
+    "Username": "Pseudo",
+    "Password": "Mot de passe",
+    "login": "Connexion",
+    "reset": "Reset des champs",
+    "SWITCH_THEME" : "CHANGEMENT DE THEME"
+    }
+}
