@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import CellRow from '../cellRow/index'
+import ScoreBox from '../score/index'
 import { useSwipeable } from 'react-swipeable'
 
 const config = {
@@ -11,12 +12,12 @@ const config = {
   rotationAngle: 0,                      // set a rotation angle
 }
 
+let score = 0;
+
 const transpose = a => a[0].map((_, c) => a.map(r => r[c]))
 
 const isCellFilled = (cell) => cell !== null
 const isCellNotFilled = (cell) => !isCellFilled(cell)
-
-let score = 0;
 
 const moveFilledCellsToLeft = (row) => {
   for (let index = 0; index < row.length - 1; index++) {
@@ -24,34 +25,40 @@ const moveFilledCellsToLeft = (row) => {
       row[index] = row[index] * 2
       row[index + 1] = null // clear next cell
     }
-
+    
     if (isCellNotFilled(row[index])) {
-      row[index] = row[index + 1];
-      score = score + row[index];
+      row[index] = row[index + 1]
       row[index + 1] = null // clear next cell
     }
+    //console.log("index = " +  index + " Value = " + row[index]);
   }
-  console.log(score);
   return row;
 }
 
-const swipeRowToLeft = (row) => {
+const swipeRowToLeft = (row, score) => {
   let unfilledCellsLength = row.filter((cell) => isCellNotFilled(cell)).length
   for (let i = 0; i <= unfilledCellsLength; i++) {
     moveFilledCellsToLeft(row)
   }
+  
+  row.forEach(element => {
+    score = score + element;
+  });
+  
+  console.log(score);
+  
   return row;
 }
 
 function CellsBoard({ board, refreshBoard }) {
   const handlers = useSwipeable({
     onSwipedLeft: () => {
-      board.map((row) => swipeRowToLeft(row))
+      board.map((row) => swipeRowToLeft(row, score))
       refreshBoard(board)
     },
     onSwipedRight: (eventData) => {
       board.map((row) => swipeRowToLeft(row.reverse()))
-      board.map((row) => row.reverse())
+      board.map((row) =>  row.reverse())
       refreshBoard(board)
     },
     onSwipedUp: (eventData) => {
@@ -77,18 +84,11 @@ function CellsBoard({ board, refreshBoard }) {
           <CellRow key={index} row={row} />
         ) 
       })}
+    <ScoreBox>
+      {score}
+    </ScoreBox>
     </CellsBoardContainer>
   )
-}
-
-const scoreCalc = (row) => {
-  for (let index = 0; index < row.length - 1; index++) {
-    if (isCellNotFilled(row[index])) {
-      score = score + row[index];
-    }
-  }
-
-  return score;
 }
 
 const CellsBoardContainer = styled.div`

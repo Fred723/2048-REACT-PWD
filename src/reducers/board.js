@@ -8,7 +8,8 @@ const initialState = {
     [8, 8, 4, 256, null, 8],
     [16, 16, 8, null, null, 256],
     [32, null, 256, 32, 2, 4]
-  ]
+  ],
+  score : 0
 }
 
 export default (state = initialState, action) => {
@@ -16,7 +17,8 @@ export default (state = initialState, action) => {
     case REFRESH_BOARD:
       return {
         ...state,
-        board: action.value || state.board
+        board: action.value || state.board,
+        score: action.score || state.board
       }
 
     default:
