@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Logo from '../logo/index'
-import i18next from 'i18next'
+import ChangeLanguageButton from '../languageChange/index'
 import { withTranslation } from 'react-i18next'
 
 function LoginForm({ image, title, onConfirm, t }) {
@@ -30,8 +30,9 @@ function LoginForm({ image, title, onConfirm, t }) {
   return (
 
       <LoginFormContainer>
-      <button onClick={() => i18next.changeLanguage('fr')}>fr</button>
-      <button onClick={() => i18next.changeLanguage('en')}>en</button>             
+        <ChangeLanguageButton>
+        </ChangeLanguageButton>
+
       <StyledHeader>
         <Logo size={50} src ={image}/>
       </StyledHeader>
@@ -106,4 +107,7 @@ const StyledHeader = styled.h2`
   color: #333;
   text-align: center;
 `
+
+
+
 export default withTranslation()(LoginForm)
