@@ -1,21 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import ChangeLanguageButton from '../languageChange/index'
 import { withTranslation } from 'react-i18next'
 
 
 const ThemeSwitch = ({ switchTheme, t }) => {
   return (
-    <div>
-      <ChangeLanguageButton>
-
-      </ChangeLanguageButton>
   	<SwitchContainer onClick={switchTheme}>
-    {t('SWITCH_THEME')}
-      
-      
+      {t('SWITCH_THEME')}
     </SwitchContainer>
-    </div>
   )
 };
 
