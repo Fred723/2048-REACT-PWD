@@ -2,7 +2,12 @@ import React from 'react'
 import axios from 'axios'
 import LoginForm from '../components/loginForm/index'
 
-const Login = ({ history }) => {
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import allTheActions from '../actions'
+
+const Login = (props) => {
+  let { history, userState } = props;
   const BAD_LOGIN_MSG = 'False username or password'
 
   const login = (username, password) => {
@@ -23,7 +28,13 @@ const Login = ({ history }) => {
           history.push('/game')
         }
       })
-      .catch(() => alert(BAD_LOGIN_MSG))
+      .catch(() => {
+        if (userState.token) {
+          history.push('/game')
+        } else {
+          alert(BAD_LOGIN_MSG)
+        }
+      })
   }
 
   return (
@@ -33,4 +44,14 @@ const Login = ({ history }) => {
   )
 }
 
-export default Login
+const mapStateToProps = state => ({
+  userState: state.user
+})
+
+const mapDispatchToProps = () => dispatch => ({
+  actions: {
+    user: bindActionCreators(allTheActions.user, dispatch)
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
