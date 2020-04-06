@@ -6,6 +6,7 @@
     "reset": "Reset des champs",
     "SWITCH_THEME" : "CHANGEMENT DE THEME",
     "LOG OUT": "SE DÉCONNECTER",
-    "False username or password": "Mauvais pseudo ou mot de passe"
+    "False username or password": "Mauvais pseudo ou mot de passe",
+    "change_lang": "Changement de langue :"
     }
 }
