@@ -49,6 +49,7 @@ const AccountParamsContainer = styled.div`
   bottom: 50px;
   width: 100%;
   text-align: center;
+  color: ${props => props.theme.font};
 `
 
 
@@ -69,6 +70,7 @@ const LogOutButton = styled(StyledButton)`
 `
 const NotificationButton = styled(StyledButton)`
   margin: 10%;
+  
 `
 
 
