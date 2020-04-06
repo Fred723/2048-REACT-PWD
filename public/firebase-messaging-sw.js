@@ -1,25 +1,15 @@
-importScripts('https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js')
-importScripts('https://www.gstatic.com/firebasejs/5.9.4/firebase-messaging.js')
-// import * as firebase from 'firebase'
+importScripts('https://www.gstatic.com/firebasejs/4.8.1/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/4.8.1/firebase-messaging.js');
 
 firebase.initializeApp({
-  messagingSenderId: '261406246970'
-})
+    apiKey: "AIzaSyCM7mA8B6ug0JU_vJe5ukfAQWilb6iK3o4",
+    authDomain: "ynov-3m-2048.firebaseapp.com",
+    databaseURL: "https://ynov-3m-2048.firebaseio.com",
+    projectId: "ynov-3m-2048",
+    storageBucket: "ynov-3m-2048.appspot.com",
+    messagingSenderId: "101397248567",
+    appId: "1:101397248567:web:5231ca71cb8c9f610c5db2",
+    measurementId: "G-L60554TDLB"
+});
 
-const messaging = firebase.messaging()
-messaging.setBackgroundMessageHandler(function(payload) {
-  console.log('[firebase-messaging-sw.js] Received background message ', payload);
-  // Customize notification here
-  const notificationTitle = 'Background Message Title';
-  const notificationOptions = {
-    body: 'Background Message body.',
-    icon: 'public/log512.png'
-  };
-
-  return self.registration.showNotification(notificationTitle,
-    notificationOptions);
-})
-self.addEventListener('notificationclick', function(event) {
-  // do what you want
-  // ...
-})
+const messaging = firebase.messaging();
