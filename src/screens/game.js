@@ -8,6 +8,7 @@ import { withTranslation } from 'react-i18next'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import allTheActions from '../actions'
+import { askForPermissioToReceiveNotifications } from '../push-notification';
 
 const Game = (props) => {
   return (
@@ -17,11 +18,17 @@ const Game = (props) => {
         score={props.boardState.score}
         refreshBoard={props.actions.board.refreshBoard}
       />
+
+    <NotificationButton onClick={askForPermissioToReceiveNotifications} >
+      Appuyez ici pour avoir une notification <br/>(Statut 200 en console)
+    </NotificationButton>
+
+
       <AccountParamsContainer>
         <ChangeLanguageButton />
   	    <ThemeSwitch theme={props.themeState.theme} switchTheme={props.actions.theme.switchTheme} />
         <br />
-        <LogOutButton onClick={props.actions.user.logout}>{props.t('LOG OUT')}</LogOutButton>
+        <LogOutButton onClick={props.actions.user.logout}>{props.t('log out')}</LogOutButton>
       </AccountParamsContainer>
     </GameContainer>
   );
@@ -44,14 +51,26 @@ const AccountParamsContainer = styled.div`
   text-align: center;
 `
 
-const LogOutButton = styled.button`
+
+const StyledButton = styled.button`
   padding: 10px 30px;
   border-radius: 4px;
   border: 1px solid lightgray;
   background: lightgray;
   color: #222;
   font-weight: bold;
+
 `
+
+
+
+const LogOutButton = styled(StyledButton)`
+  text-transform: uppercase;
+`
+const NotificationButton = styled(StyledButton)`
+  margin: 10%;
+`
+
 
 const mapStateToProps = state => ({
   boardState: state.board,

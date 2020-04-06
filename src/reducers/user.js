@@ -2,7 +2,7 @@ import { LOGIN, LOGOUT, LOGIN_SUCCESS, LOGIN_FAILURE } from '../actions/user'
 
 const initialState = {
   token: localStorage.getItem('MarvelSession')
-    ? JSON.parse(localStorage.getItem('MarvelSession')).token
+    ? localStorage.getItem('MarvelSession').token
     : null,
   error: null
 }
